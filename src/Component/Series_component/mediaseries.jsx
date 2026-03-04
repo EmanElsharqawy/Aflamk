@@ -1,0 +1,89 @@
+import React from 'react'
+import Tab from "react-bootstrap/Tab";
+import Tabs from "react-bootstrap/Tabs";
+import { useSelector, useDispatch } from "react-redux";
+import { getseriestailler, getseriesimage } from "../../Redux/Series_slice";
+import "../../App.css";
+import Card from 'react-bootstrap/Card';
+import { useEffect } from 'react';
+
+const Mediaseries = ({seriesId, seriescasting}) => {
+
+ const {  seriestailler , seriesimage } = useSelector((state) => state.Series);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (seriesId) {
+      dispatch(getseriestailler(seriesId));
+      dispatch(getseriesimage(seriesId));
+     
+    }
+  }, [seriesId]);
+
+  return (
+    <>
+      <div className="text-white container">
+        <div className="d-flex justify-content-between align-items-center">
+          <h4 className="text-info mt-3">Media</h4>
+        </div>
+      </div>
+
+      <div className="container">
+        <Tabs defaultActiveKey="videos" id="media-tabs" className="mb-3">
+          
+          {/* VIDEOS */}
+          <Tab eventKey="videos" title={`VIDEOS (${ seriestailler?.results?.length || 0})`}>
+            <div className="custom-scroll">
+              {seriestailler?.results?.map((mov) => (
+                <iframe
+                  key={mov.id}
+                  src={`https://www.youtube.com/embed/${mov?.key}`}
+                  title="YouTube video player"
+                  allowFullScreen
+                ></iframe>
+              ))}
+            </div>
+          </Tab>
+
+          {/* BACKDROPS */}
+          <Tab eventKey="backdrops" title="BACKDROPS">
+  <div className="custom-scroll">
+   
+    {seriesimage?.posters?.slice(0, 7).map((mov2) => (
+          <Card key={mov2.id} className="poster-card">
+            <Card.Img 
+              src={`https://image.tmdb.org/t/p/w500${mov2?.file_path}`}
+              alt="Backdrop"
+            />
+          </Card>
+        ))}
+    
+     
+    
+    
+  </div>
+</Tab>
+
+          {/* POSTERS */}
+          <Tab eventKey="posters" title="POSTERS">
+            <div className="custom-scroll">
+              {seriescasting?.cast?.slice(0, 7).map((mov1) => (
+                  <Card key={mov1.id} className="poster-card">
+                    <Card.Img
+                      src={`https://image.tmdb.org/t/p/w500${mov1?.profile_path}`}
+                      alt="Poster"
+                    />
+                  </Card>
+                ))}
+               
+              
+            </div>
+          </Tab>
+
+        </Tabs>
+      </div>
+    </>
+  )
+}
+
+export default Mediaseries

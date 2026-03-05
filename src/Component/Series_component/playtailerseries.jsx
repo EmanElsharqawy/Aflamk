@@ -14,7 +14,7 @@ function Platseriestailer ({ movieseriesId, originalseriesTitle , ...props }) {
     if ( movieseriesId) {
       dispatch(getseriestailler(movieseriesId));
     }
-  }, [movieseriesId]);
+  }, [movieseriesId ,dispatch]);
 
   return (
     <Modal {...props} centered>

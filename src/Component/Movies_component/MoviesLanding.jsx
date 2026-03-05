@@ -8,7 +8,7 @@ import Stack from "@mui/material/Stack";
 import Spinner from 'react-bootstrap/Spinner';
 import { useNavigate } from "react-router-dom";
 
-const Movies_landing = () => {
+const MoviesLanding = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -18,7 +18,7 @@ const Movies_landing = () => {
     dispatch(getMovies_2(currentPage));
 
    
-  }, [currentPage]);
+  }, [currentPage,dispatch]);
 
 
   const handleDetailsClick = (movieId) => {
@@ -115,4 +115,4 @@ const Movies_landing = () => {
 
 };
 
-export default Movies_landing;
+export default MoviesLanding;

@@ -2,12 +2,9 @@ import React, { useEffect } from "react";
 import { getseriesdetails, getseriescasting } from "../../Redux/Series_slice";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import Spinner from "react-bootstrap/Spinner";
 import { TbJewishStar } from "react-icons/tb";
 import { BsFillPlayCircleFill } from "react-icons/bs";
 import { MdNoteAdd } from "react-icons/md";
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
 import Playseriestailer from"./playtailerseries"
 import "../../App.css";
 import Castingseries from"./castingseries"

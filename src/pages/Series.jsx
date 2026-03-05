@@ -1,5 +1,5 @@
 import React from 'react';
-import Series_landing from '../Component/Series_component/Series_landing';
+import SeriesLanding from '../Component/Series_component/SeriesLanding';
 import "../App.css";
 
 
@@ -7,7 +7,7 @@ const Series = () => {
   return (
     <>
 
-    <Series_landing />
+    <SeriesLanding/>
  
     </>
   );

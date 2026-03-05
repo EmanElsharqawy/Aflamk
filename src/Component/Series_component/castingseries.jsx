@@ -20,7 +20,7 @@ const Castingseries = ({seriesId ,revenue}) => {
     if (seriesId) {
    dispatch (getseriescasting(seriesId))
     }
- },[seriesId]);
+ },[seriesId,dispatch]);
   return (
   <>
   

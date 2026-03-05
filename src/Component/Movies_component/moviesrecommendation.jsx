@@ -16,7 +16,7 @@ const Moviesrecommendation = ({movieId}) => {
       dispatch(getMoviesrecommandation(movieId));
     }
 
-  }, [movieId]);
+  }, [movieId ,dispatch]);
 
   const handelmoviesDetailsClick =(seriesid)=>{
    navigate(`/Series/${seriesid}`);

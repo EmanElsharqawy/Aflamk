@@ -2,15 +2,13 @@ import React, { useEffect } from "react";
 import Slider from "react-slick";
 import { useDispatch, useSelector } from "react-redux";
 import { getseries } from "../../Redux/series_curser_slice";
-import Spinner from 'react-bootstrap/Spinner';
 import { useNavigate } from "react-router-dom";
 
-function Series_curser() {
+function SeriesCursor() {
   const dispatch = useDispatch();
   
-
   const seriesState = useSelector(state => state.seriescursor || { data: [], isLoading: false, error: null });
-  const { data, isLoading, error } = seriesState;
+  const { data, isLoading } = seriesState;
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -58,4 +56,4 @@ function Series_curser() {
   );
 }
 
-export default Series_curser;
+export default SeriesCursor;

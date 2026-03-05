@@ -1,5 +1,5 @@
 import React from 'react'
-import Movies_landing from '../Component/Movies_component/Movies_landing'  
+import MoviesLanding from '../Component/Movies_component/MoviesLanding'  
 import "../App.css"; 
 
 
@@ -7,7 +7,7 @@ const Movies = () => {
   return (
     <>
  
-    <Movies_landing/>
+    <MoviesLanding/>
 
     
     </>

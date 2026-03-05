@@ -1,10 +1,10 @@
 import React from 'react';
 import Spinner from 'react-bootstrap/Spinner';
-import Home_upper from '../Component/Home-component/Home_upper';
-import Home_cursor from '../Component/Home-component/Movies_cursor';
-import Series_curser from '../Component/Home-component/Series_cursor';
-import Top_movies from '../Component/Home-component/Top_movies';
-import Top_series from '../Component/Home-component/Top_series';  
+import HomeUpper from '../Component/Home-component/HomeUpper';
+import HomeCursor from '../Component/Home-component/HomeCursor';
+import SeriesCursor from '../Component/Home-component/SeriesCursor';
+import TopMovies from '../Component/Home-component/TopMovies';
+import TopSeries from '../Component/Home-component/TopSeries';  
 import { useSelector,useDispatch } from 'react-redux';
 import {getMovies_2} from "../Redux/Movies_slice"
 import { useEffect } from 'react';
@@ -19,7 +19,7 @@ const Home = () => {
   }, [dispatch]);
   return (
     <>
- <Home_upper />
+   <HomeUpper/>
    <div className='custom_bg'>
   {isLoadingMovies ? (
     <div
@@ -31,10 +31,10 @@ const Home = () => {
   ) : (
     <>
      
-      <Home_cursor />
-      <Series_curser />
-      <Top_movies />
-      <Top_series />
+      <HomeCursor />
+      <SeriesCursor />
+      <TopMovies/>
+      <TopSeries />
     </>
   )}
 </div>

@@ -184,7 +184,7 @@ const movies_Slice_2 = createSlice({
     movierecomend:[],
     isLoadingMovies: false,
     isLoadingDetails: false,
-     moviesearch: { results: [] }
+    moviesearch: { results: [] }
   },
  
 
@@ -274,7 +274,7 @@ const movies_Slice_2 = createSlice({
         state.isLoadingRecommend = true;
       })
       .addCase(getMoviessearch.fulfilled, (state, action) => {
-        state. moviesearch  = action.payload;
+        state.moviesearch=action.payload;
    
 
       })

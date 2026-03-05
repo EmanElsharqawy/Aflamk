@@ -9,7 +9,7 @@ import Stack from "@mui/material/Stack";
 import Spinner from 'react-bootstrap/Spinner';
 import { useNavigate } from "react-router-dom";
 
-const Series_landing = () => {
+const SeriesLanding = () => {
    const navigate = useNavigate();
   const [currentPage, setCurrentPage] = useState(1);
   const dispatch = useDispatch();
@@ -112,4 +112,4 @@ const Series_landing = () => {
   );
 };
 
-export default Series_landing;
+export default SeriesLanding;

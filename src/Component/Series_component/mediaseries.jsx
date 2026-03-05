@@ -18,7 +18,7 @@ const Mediaseries = ({seriesId, seriescasting}) => {
       dispatch(getseriesimage(seriesId));
      
     }
-  }, [seriesId]);
+  }, [seriesId,dispatch]);
 
   return (
     <>

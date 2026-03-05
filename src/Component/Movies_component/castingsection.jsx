@@ -18,7 +18,7 @@ const Castingsection = ({movieId ,revenue}) => {
     if (movieId) {
    dispatch (getMoviescasting(movieId))
     }
- },[movieId]);
+ },[movieId,dispatch]);
 
   return (
    <>

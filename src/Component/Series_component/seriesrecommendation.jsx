@@ -10,15 +10,17 @@ const Seriesrecommendation = ({seriesId}) => {
     const {  seriesrecommend } = useSelector((state) => state.Series);
     const dispatch = useDispatch();
 
-  useEffect(() => {
-    if (seriesId) {
-      dispatch(getseriesrecommend(seriesId)); 
-    }
-    window.scrollTo({
+useEffect(() => {
+  if (seriesId) {
+    dispatch(getseriesrecommend(seriesId)); 
+  }
+
+  window.scrollTo({
     top: 0,
     behavior: "smooth",
-    });
-  }, [seriesId]);
+  });
+
+}, [seriesId, dispatch]);
 
   
   const handelseriesDetailsClick =(seriesid)=>{

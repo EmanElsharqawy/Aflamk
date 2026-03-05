@@ -15,7 +15,7 @@ const Mediamovies = ({ movieId, moviecasting }) => {
       dispatch(getMoviestailler(movieId));
       dispatch(getMovieimage(movieId));
     }
-  }, [movieId]);
+  }, [movieId ,dispatch]);
    
 
   return (

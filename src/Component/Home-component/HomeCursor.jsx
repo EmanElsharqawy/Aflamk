@@ -5,9 +5,9 @@ import { getMovies } from "../../Redux/cursor_slice";
 import { useNavigate } from "react-router-dom";
 
 
-import Spinner from 'react-bootstrap/Spinner';
 
-const Home_cursor = () => {
+
+const Homecursor = () => {
     var settings = {
     dots: true,
     infinite: false,
@@ -45,7 +45,7 @@ const Home_cursor = () => {
 
 
   const dispatch = useDispatch();
-  const { data, isLoading, error } = useSelector((state) => state.movies);
+  const { data, isLoading } = useSelector((state) => state.movies);
    const navigate = useNavigate();
 
   useEffect(() => {
@@ -80,4 +80,4 @@ const Home_cursor = () => {
   );
 };
 
-export default Home_cursor;
+export default Homecursor;
